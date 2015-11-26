@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com.os.mobile.cardio"
+      version="0.0.1">
+    <name>Card.io Cordova Plugin</name>
+    <description>Plugin Read Card ID and to Scan Documents</description>
+    <license>MIT License</license>
+    <keywords>cordova, outsystems, card.io, cardio</keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <js-module src="www/CardioPlugin.js" name="CardioPlugin">
+        <clobbers target="cordova.plugins.cardio" />
+        <clobbers target="plugin.cardio" />
+    </js-module>
+    
+    <!-- Android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CardioPlugin">
+                <param name="android-package" value="com.os.mobile.cardioplugin.CardIoPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/CardIoPlugin.java" target-dir="src/com/os/mobile/cardioplugin" />
+    </platform> <!-- /Android -->
+
+    <!-- iOS -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CardioPlugin">
+                <param name="ios-package" value="CardioPlugin" onload="false" />
+            </feature>
+        </config-file>
+
+        <!-- Plugin Implementation -->
+        <header-file src="src/ios/CardioPlugin.h" />
+        <source-file src="src/ios/CardioPlugin.m"/>
+
+        <!-- CardIO library -->
+        <header-file src="src/ios/CardIO/CardIO.h" />
+        <header-file src="src/ios/CardIO/CardIOCreditCardInfo.h" />
+        <header-file src="src/ios/CardIO/CardIODetectionMode.h" />
+        <header-file src="src/ios/CardIO/CardIOPaymentViewController.h" />
+        <header-file src="src/ios/CardIO/CardIOPaymentViewControllerDelegate.h" />
+        <header-file src="src/ios/CardIO/CardIOUtilities.h" />
+        <header-file src="src/ios/CardIO/CardIOView.h" />
+        <header-file src="src/ios/CardIO/CardIOViewDelegate.h" />
+
+        <source-file src="src/ios/CardIO/libCardIO.a" framework="true"/>
+        <source-file src="src/ios/CardIO/libopencv_core.a" framework="true"/>
+        <source-file src="src/ios/CardIO/libopencv_imgproc.a" framework="true"/>
+
+        <!-- CardIO library dependencies -->
+        <framework src="Accelerate.framework"/>
+        <framework src="AudioToolbox.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="CoreMedia.framework"/>
+        <framework src="CoreVideo.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="MobileCoreServices.framework"/>
+        <framework src="OpenGLES.framework"/>
+        <framework src="QuartzCore.framework"/>
+        <framework src="Security.framework"/>
+        <framework src="UIKit.framework"/>
+        <framework src="libc++.dylib"/>
+    </platform> <!-- / iOS -->
+
+</plugin>
