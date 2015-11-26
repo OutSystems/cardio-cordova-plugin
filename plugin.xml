@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
            id="com.os.mobile.cardio"
-      version="0.0.1">
+      version="1.0.0">
     <name>Card.io Cordova Plugin</name>
     <description>Plugin Read Card ID and to Scan Documents</description>
     <license>MIT License</license>
@@ -14,7 +14,7 @@
         <clobbers target="cordova.plugins.cardio" />
         <clobbers target="plugin.cardio" />
     </js-module>
-    
+
     <!-- Android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
@@ -23,6 +23,7 @@
             </feature>
         </config-file>
         <source-file src="src/android/CardIoPlugin.java" target-dir="src/com/os/mobile/cardioplugin" />
+        <!-- <framework src="io.card:android-sdk:5.1.2" /> -->
     </platform> <!-- /Android -->
 
     <!-- iOS -->
