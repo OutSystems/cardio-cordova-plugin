@@ -48,9 +48,9 @@
         <header-file src="src/ios/CardIO/CardIOView.h" />
         <header-file src="src/ios/CardIO/CardIOViewDelegate.h" />
 
-        <source-file src="src/ios/CardIO/libCardIO.a" framework="true"/>
-        <source-file src="src/ios/CardIO/libopencv_core.a" framework="true"/>
-        <source-file src="src/ios/CardIO/libopencv_imgproc.a" framework="true"/>
+        <source-file src="src/ios/CardIO/libCardIO.a" framework="true" custom="true" />
+        <source-file src="src/ios/CardIO/libopencv_core.a" framework="true" custom="true" />
+        <source-file src="src/ios/CardIO/libopencv_imgproc.a" framework="true" custom="true" />
 
         <!-- CardIO library dependencies -->
         <framework src="Accelerate.framework"/>
