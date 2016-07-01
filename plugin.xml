@@ -2,12 +2,12 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
            id="com.os.mobile.cardio"
-      version="1.0.0">
+      version="1.0.1">
     <name>Card.io Cordova Plugin</name>
     <description>Plugin Read Card ID and to Scan Documents</description>
     <license>MIT License</license>
     <keywords>cordova, outsystems, card.io, cardio</keywords>
-    <repo></repo>
+    <repo>https://github.com/OutSystems/cardio-cordova-plugin</repo>
     <issue></issue>
 
     <js-module src="www/CardioPlugin.js" name="CardioPlugin">
