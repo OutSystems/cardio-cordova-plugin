@@ -23,7 +23,7 @@
             </feature>
         </config-file>
         <source-file src="src/android/CardIoPlugin.java" target-dir="src/com/os/mobile/cardioplugin" />
-        <!-- <framework src="io.card:android-sdk:5.1.2" /> -->
+        <framework src="src/android/cardio.gradle" custom="true" type="gradleReference" />
     </platform> <!-- /Android -->
 
     <!-- iOS -->
