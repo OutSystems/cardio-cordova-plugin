@@ -1,5 +1,7 @@
 # OutSystems card.io cordova plugin
 
+:warning: This plugin is SUPPORTED by OutSystems. Customers entitled to Support Services may obtain assistance through Support.
+
 The purpose of this plugin is to leverage Hybrid Applications with [card.io](https://www.card.io/) features. With this plugin, users can scan credit cards in a hybrid mobile app.
 
 As with all the cordova plugins, the plugin isn't available until the execution of `deviceready` event.
