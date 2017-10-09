@@ -57,7 +57,7 @@ public class CardIoPlugin extends CordovaPlugin {
                 public void onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults) throws JSONException {
                     super.onRequestPermissionResult(requestCode, permissions, grantResults);
 
-                    if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                    if (grantResults != null && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                         scanCardLogic(args);
                 }
             }, REQUEST_PERMISSION, Manifest.permission.CAMERA);
