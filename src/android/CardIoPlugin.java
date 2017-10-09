@@ -2,8 +2,8 @@ package com.os.mobile.cardioplugin;
 
 import android.Manifest;
 import android.content.Intent;
-
 import android.content.pm.PackageManager;
+import android.os.Parcelable;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -24,12 +24,12 @@ public class CardIoPlugin extends CordovaPlugin {
     private static final int ERROR_USER_CANCEL = 1;
     private static final int ERROR_CANT_READ_CARD = 2;
 
-    private static final int REQUEST_PERMISSION = 100;
-
     private static final int CARDIO_PLUGIN_SCAN_CARD_REQUEST_CODE = 0xff0;
 
     /* Cordova Plugin - Action to Scan Card */
     public static final String ACTION_SCAN_CARD = "scanCard";
+
+    private static final int REQUEST_PERMISSION = 100;
 
     private CallbackContext callbackContext;
 
@@ -54,13 +54,11 @@ public class CardIoPlugin extends CordovaPlugin {
         if (!CardIOActivity.canReadCardWithCamera()) {
             this.cordova.requestPermission(new CordovaPlugin(){
                 @Override
-                public boolean onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults) throws JSONException {
+                public void onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults) throws JSONException {
                     super.onRequestPermissionResult(requestCode, permissions, grantResults);
 
                     if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                        return scanCardLogic(args);
-
-                    return false;
+                        scanCardLogic(args);
                 }
             }, REQUEST_PERMISSION, Manifest.permission.CAMERA);
         } else
