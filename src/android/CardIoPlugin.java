@@ -3,6 +3,9 @@ package com.os.mobile.cardioplugin;
 import android.content.Intent;
 import android.os.Parcelable;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
