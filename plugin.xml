@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
            id="com.os.mobile.cardio"
-      version="1.0.1">
+      version="1.0.3">
     <name>Card.io Cordova Plugin</name>
     <description>Plugin Read Card ID and to Scan Documents</description>
     <license>MIT License</license>
@@ -17,6 +17,11 @@
 
     <!-- Android -->
     <platform name="android">
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.CAMERA" />
+        </config-file>
+
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="CardioPlugin">
                 <param name="android-package" value="com.os.mobile.cardioplugin.CardIoPlugin"/>

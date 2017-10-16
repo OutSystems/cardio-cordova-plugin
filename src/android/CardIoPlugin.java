@@ -1,6 +1,8 @@
 package com.os.mobile.cardioplugin;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Parcelable;
 
 import org.apache.cordova.CallbackContext;
@@ -27,6 +29,8 @@ public class CardIoPlugin extends CordovaPlugin {
     /* Cordova Plugin - Action to Scan Card */
     public static final String ACTION_SCAN_CARD = "scanCard";
 
+    private static final int REQUEST_PERMISSION = 100;
+
     private CallbackContext callbackContext;
 
     @Override
@@ -45,7 +49,26 @@ public class CardIoPlugin extends CordovaPlugin {
      * @param args
      * @throws JSONException
      */
-    private boolean scanCard(CallbackContext callbackContext, JSONArray args) throws JSONException {
+    private boolean scanCard(CallbackContext callbackContext, final JSONArray args) throws JSONException {
+
+        if (!CardIOActivity.canReadCardWithCamera()) {
+            this.cordova.requestPermission(new CordovaPlugin(){
+                @Override
+                public void onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults) throws JSONException {
+                    super.onRequestPermissionResult(requestCode, permissions, grantResults);
+
+                    if (grantResults != null && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                        scanCardLogic(args);
+                }
+            }, REQUEST_PERMISSION, Manifest.permission.CAMERA);
+        } else
+            return scanCardLogic(args);
+
+        return false;
+
+    }
+
+    private boolean scanCardLogic(JSONArray args) {
         if (CardIOActivity.canReadCardWithCamera()) {
             try {
                 boolean requireExpiry = args.length() >= 1 ? args.getBoolean(0) : false;
