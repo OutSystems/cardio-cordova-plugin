@@ -5,6 +5,7 @@
       version="1.0.3">
     <name>Card.io Cordova Plugin</name>
     <description>Plugin Read Card ID and to Scan Documents</description>
+    <author>OutSystems</author>
     <license>MIT License</license>
     <keywords>cordova, outsystems, card.io, cardio</keywords>
     <repo>https://github.com/OutSystems/cardio-cordova-plugin</repo>
