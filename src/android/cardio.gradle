@@ -3,5 +3,5 @@ repositories {
 }
 
 dependencies {
-    compile 'io.card:android-sdk:5.1.2'
+    implementation 'io.card:android-sdk:5.1.2'
 }
