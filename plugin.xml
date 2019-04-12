@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
            id="com.os.mobile.cardio"
-      version="1.0.4">
+      version="1.0.5">
     <name>Card.io Cordova Plugin</name>
     <description>Plugin Read Card ID and to Scan Documents</description>
     <author>OutSystems</author>
