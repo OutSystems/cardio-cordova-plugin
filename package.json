@@ -1,6 +1,6 @@
 {
   "name": "com.os.mobile.cardio",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Plugin Read Card ID and to Scan Documents",
   "cordova": {
     "id": "com.os.mobile.cardio",
