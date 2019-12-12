@@ -61,11 +61,12 @@ public class CardIoPlugin extends CordovaPlugin {
                         scanCardLogic(args);
                 }
             }, REQUEST_PERMISSION, Manifest.permission.CAMERA);
-        } else
+
+            return true;
+
+        } else {
             return scanCardLogic(args);
-
-        return false;
-
+        }
     }
 
     private boolean scanCardLogic(JSONArray args) {
