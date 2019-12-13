@@ -1,6 +1,6 @@
 //
 //  CardIOView.h
-//  Version 5.2.2
+//  Version 5.5.0
 //
 //  See the file "LICENSE.md" for the full license governing this code.
 //
@@ -34,7 +34,7 @@
 /// E.g., specifying "en" on a device set to "English" and "United Kingdom" will result in "en_GB".
 ///
 /// These localizations are currently included:
-/// ar,da,de,en,en_AU,en_GB,es,es_MX,fr,he,is,it,ja,ko,ms,nb,nl,pl,pt,pt_BR,ru,sv,th,tr,zh-Hans,zh-Hant,zh-Hant_TW.
+/// ar,da,de,en,en_AU,en_GB,es,es_MX,fi,fr,he,is,it,ja,ko,ms,nb,nl,pl,pt,pt_BR,ru,sv,th,tr,zh-Hans,zh-Hant,zh-Hant_TW.
 @property(nonatomic, copy, readwrite) NSString *languageOrLocale;
 
 /// Alter the card guide (bracket) color. Opaque colors recommended.
@@ -123,3 +123,4 @@ extern NSString * const CardIOScanningOrientationAnimationDuration;
 @property(nonatomic, assign, readonly) CGRect cameraPreviewFrame;
 
 @end
+

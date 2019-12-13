@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Additions
+- Adds Dark Mode support for devices running iOS 13 and above [RNMT-3424](https://outsystemsrd.atlassian.net/browse/RNMT-3424)
+
 ## [1.0.6]
 ### Fixes
 - Fixes an issue with the camera permission request that was preventing scanning Cards with success in Android [RNMT-3665](https://outsystemsrd.atlassian.net/browse/RNMT-3665)
