@@ -45,6 +45,7 @@
 
         <!-- CardIO library -->
         <header-file src="src/ios/CardIO/CardIO.h" />
+        <source-file src="src/ios/CardIO/CardIO.m"/>
         <header-file src="src/ios/CardIO/CardIOCreditCardInfo.h" />
         <header-file src="src/ios/CardIO/CardIODetectionMode.h" />
         <header-file src="src/ios/CardIO/CardIOPaymentViewController.h" />
