@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.1.0]
 ### Additions
 - Adds Dark Mode support for devices running iOS 13 and above [RNMT-3424](https://outsystemsrd.atlassian.net/browse/RNMT-3424)
 
@@ -16,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changes
 - Update usage of compile to implementation/api in gradle dependencies [RNMT-2655](https://outsystemsrd.atlassian.net/browse/RNMT-2655)
 
-[Unreleased]: https://github.com/OutSystems/cardio-cordova-plugin/compare/1.0.6...HEAD
+[Unreleased]: https://github.com/OutSystems/cardio-cordova-plugin/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/OutSystems/cardio-cordova-plugin/compare/1.0.6...1.1.0
 [1.0.6]: https://github.com/OutSystems/cardio-cordova-plugin/compare/1.0.5...1.0.6
 [1.0.5]: https://github.com/OutSystems/cardio-cordova-plugin/compare/1.0.4...1.0.5
