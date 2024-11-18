@@ -1,7 +1,9 @@
 repositories {
+    google()
     mavenCentral()
 }
 
 dependencies {
     implementation 'io.card:android-sdk:5.1.2'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 }

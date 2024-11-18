@@ -33,6 +33,8 @@ public class CardIoPlugin extends CordovaPlugin {
 
     private CallbackContext callbackContext;
 
+    private CardIoActivityLifecycleCallbacks mCurrentActivityCallback = null;
+
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         this.callbackContext = callbackContext;
@@ -83,6 +85,7 @@ public class CardIoPlugin extends CordovaPlugin {
                 scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_POSTAL_CODE, requirePostalCode); // default: false
                 // scanIntent.putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, true);
                 // scanIntent.putExtra(CardIOActivity.EXTRA_KEEP_APPLICATION_THEME, true);
+                observeActivityLifecycle();
                 this.cordova.startActivityForResult(this, scanIntent, CARDIO_PLUGIN_SCAN_CARD_REQUEST_CODE);
                 return true;
             } catch (JSONException e) {
@@ -93,6 +96,18 @@ public class CardIoPlugin extends CordovaPlugin {
             this.respondError(ERROR_CANT_READ_CARD, "Can't scan with camera.");
             return false;
         }
+    }
+
+    private void observeActivityLifecycle() {
+        if (mCurrentActivityCallback != null) {
+            this.cordova.getActivity().getApplication().unregisterActivityLifecycleCallbacks(
+                    mCurrentActivityCallback
+            );
+        }
+        mCurrentActivityCallback = new CardIoActivityLifecycleCallbacks();
+        this.cordova.getActivity().getApplication().registerActivityLifecycleCallbacks(
+                mCurrentActivityCallback
+        );
     }
 
     @Override
