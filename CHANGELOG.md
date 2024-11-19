@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.1.2]
 ### Fixes
+- iOS - include `NSCameraUsageDescription` in Info.plist file
+
+### Fixes
 - Android 15 - Fix cropping of Card IO screens due to Edge-to-Edge
 
 ## [1.1.1]
