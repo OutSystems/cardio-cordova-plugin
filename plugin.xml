@@ -40,6 +40,12 @@
             </feature>
         </config-file>
 
+        <!-- Usage descriptions -->
+        <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
+         <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+             <string>$CAMERA_USAGE_DESCRIPTION</string>
+         </config-file>
+
         <!-- Plugin Implementation -->
         <header-file src="src/ios/CardioPlugin.h" />
         <source-file src="src/ios/CardioPlugin.m"/>
