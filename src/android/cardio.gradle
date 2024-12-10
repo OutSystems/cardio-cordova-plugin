@@ -4,6 +4,6 @@ repositories {
 }
 
 dependencies {
-    implementation files("libs/card.io-custom-support16kb-page-size.aar")
+    implementation files("libs/card.io-5.5.1-OS1.aar.aar")
     implementation 'androidx.appcompat:appcompat:1.6.1'
 }
