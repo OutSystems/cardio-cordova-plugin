@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 ### Fixes
-- Android - Support 16KB page size
+- Android - Support 16KB page size (https://outsystemsrd.atlassian.net/browse/RMET-3602)
 
 ## [1.1.2]
 ### Fixes
